@@ -437,7 +437,7 @@
             <a href="tel:9602713323" class="button call">📞 Call</a>
             <a href="https://wa.me/7976551499" target="_blank" class="button wa">💬 WhatsApp</a>
             <a href="upi://pay?pa=9602713323@upi&pn=QuickSeva&tn=cleaning%20services=INR" <a
-              href="upi://pay?pa=7976551499@ibl&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
+              href="upi://pay?pa=7976551499@mbk&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
             </a>
             </a>
 
@@ -454,7 +454,7 @@
           <div class="actions">
             <a href="tel:9602713323" class="button call">📞 Call</a>
             <a href="https://wa.me/7976551499" target="_blank" class="button wa">💬 WhatsApp</a>
-            <a href="upi://pay?pa=7976551499@ibl&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
+            <a href="upi://pay?pa=7976551499@mbk&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
             </a>
             </a>
 
@@ -472,7 +472,7 @@
             <a href="tel:9602713323" class="button call">📞 Call</a>
             <a href="https://wa.me/7976551499" target="_blank" class="button wa">💬 WhatsApp</a>
             <a href="upi://pay?pa=ranishjain48@okhdfcbank@upi&pn=QuickSeva&tn=Carpenter%20services=INR" <a
-              href="upi://pay?pa=7976551499@ibl&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
+              href="upi://pay?pa=7976551499@mbk&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
               </a>
             </a>
 
@@ -485,41 +485,52 @@
   <section id="book" class="section">
     <div class="form-wrap">
       <h2>Book a Service</h2>
-      <form onsubmit="sendWhatsApp(event)">
-        <div class="two">
-          <div>
-            <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="e.g. Rahul Sharma" required>
-          </div>
-          <div>
-            <label for="mobile">Mobile Number</label>
-            <input type="tel" id="mobile" placeholder="10-digit mobile" pattern="[0-9]{10}" required>
-          </div>
-        </div>
-        <div class="two">
-          <div>
-            <label for="location">Location/Address</label>
-            <input type="text" id="location" placeholder="Hiran Magri, Udaipur" required>
-          </div>
-          <div>
-            <label for="service">Select Service</label>
-            <select id="service" required>
-              <option value="Plumber">Plumber</option>
-              <option value="Electrician">Electrician</option>
-              <option value="Cleaning">Cleaning</option>
-              <option value="AC Repair">AC Repair</option>
-              <option value="Carpenter">Carpenter</option>
-            </select>
-          </div>
+     <section id="book" class="section">
+  <div class="form-wrap">
+    <h2>Book a Service</h2>
+
+    <!-- Netlify Form -->
+    <form name="service-request" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="service-request">
+
+      <div class="two">
+        <div>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" required>
         </div>
         <div>
-          <label for="details">Issue Details (Optional)</label>
-          <textarea id="details" rows="3" placeholder="Briefly describe the problem..."></textarea>
+          <label for="mobile">Mobile Number</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile" pattern="[0-9]{10}" required>
         </div>
-        <button class="submit" type="submit">Send Request</button>
-        <p class="help">By submitting, you agree to be contacted by our team on WhatsApp/call regarding your service
-          request.</p>
-      </form>
+      </div>
+
+      <div class="two">
+        <div>
+          <label for="location">Location/Address</label>
+          <input type="text" id="location" name="location" placeholder="Hiran Magri, Udaipur" required>
+        </div>
+        <div>
+          <label for="service">Select Service</label>
+          <select id="service" name="service" required>
+            <option value="Plumber">Plumber</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="AC Repair">AC Repair</option>
+            <option value="Carpenter">Carpenter</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="details">Issue Details (Optional)</label>
+        <textarea id="details" name="details" rows="3" placeholder="Briefly describe the problem..."></textarea>
+      </div>
+
+      <button class="submit" type="submit">Send Request</button>
+      <p class="help">By submitting, you agree to be contacted by our team on WhatsApp/call regarding your service request.</p>
+    </form>
+  </div>
+</section>
     </div>
 
 
@@ -554,6 +565,7 @@
 
 
 </html>
+
 
 
 
