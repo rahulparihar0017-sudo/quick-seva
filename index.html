@@ -393,8 +393,9 @@
           <div class="actions">
             <a href="tel:9602713323" class="button call">📞 Call</a>
             <a href="https://wa.me/7976551499" target="_blank" class="button wa">💬 WhatsApp</a>
-           <a  href="upi://pay?pa=7976551499@mbk&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
-            </a>
+           <a
+              href="upi://pay?pa=7976551499@mbk&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
+              </a>
             </a>
 
 
@@ -419,7 +420,9 @@
           <div class="actions">
             <a href="tel:9602713323" class="button call">📞 Call</a>
             <a href="https://wa.me/7976551499" target="_blank" class="button wa">💬 WhatsApp</a>
-            <a href="upi://pay?pa=7976551499@mbk&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
+              <a
+              href="upi://pay?pa=7976551499@mbk&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
+              </a>
             </a>
             </a>
 
@@ -436,8 +439,9 @@
           <div class="actions">
             <a href="tel:9602713323" class="button call">📞 Call</a>
             <a href="https://wa.me/7976551499" target="_blank" class="button wa">💬 WhatsApp</a>
-            <a href="upi://pay?pa=9602713323@upi&pn=QuickSeva&tn=cleaning%20services=INR" <a
+              <a
               href="upi://pay?pa=7976551499@mbk&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
+              </a>
             </a>
             </a>
 
@@ -454,8 +458,9 @@
           <div class="actions">
             <a href="tel:9602713323" class="button call">📞 Call</a>
             <a href="https://wa.me/7976551499" target="_blank" class="button wa">💬 WhatsApp</a>
-            <a href="upi://pay?pa=7976551499@mbk&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
-            </a>
+            <a
+              href="upi://pay?pa=7976551499@mbk&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
+              </a>
             </a>
 
           </div>
@@ -471,7 +476,7 @@
           <div class="actions">
             <a href="tel:9602713323" class="button call">📞 Call</a>
             <a href="https://wa.me/7976551499" target="_blank" class="button wa">💬 WhatsApp</a>
-            <a href="upi://pay?pa=ranishjain48@okhdfcbank@upi&pn=QuickSeva&tn=Carpenter%20services=INR" <a
+             <a
               href="upi://pay?pa=7976551499@mbk&pn=QuickSeva&cu=INR&tn=Plumber%20services" class="submit">Book now
               </a>
             </a>
@@ -482,36 +487,31 @@
     </div>
   </section>
 
-  <section id="book" class="section">
-    <div class="form-wrap">
-      <h2>Book a Service</h2>
-     <section id="book" class="section">
+ <section id="book" class="section">
   <div class="form-wrap">
     <h2>Book a Service</h2>
 
-    <!-- Netlify Form -->
-    <form name="service-request" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="service-request">
-
+    <!-- WhatsApp Form -->
+    <form onsubmit="sendWhatsApp(event)">
       <div class="two">
         <div>
           <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" required>
+          <input type="text" id="name" placeholder="e.g. Rahul Sharma" required>
         </div>
         <div>
           <label for="mobile">Mobile Number</label>
-          <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile" pattern="[0-9]{10}" required>
+          <input type="tel" id="mobile" placeholder="10-digit mobile" pattern="[0-9]{10}" required>
         </div>
       </div>
 
       <div class="two">
         <div>
           <label for="location">Location/Address</label>
-          <input type="text" id="location" name="location" placeholder="Hiran Magri, Udaipur" required>
+          <input type="text" id="location" placeholder="Hiran Magri, Udaipur" required>
         </div>
         <div>
           <label for="service">Select Service</label>
-          <select id="service" name="service" required>
+          <select id="service" required>
             <option value="Plumber">Plumber</option>
             <option value="Electrician">Electrician</option>
             <option value="Cleaning">Cleaning</option>
@@ -523,20 +523,14 @@
 
       <div>
         <label for="details">Issue Details (Optional)</label>
-        <textarea id="details" name="details" rows="3" placeholder="Briefly describe the problem..."></textarea>
+        <textarea id="details" rows="3" placeholder="Briefly describe the problem..."></textarea>
       </div>
 
       <button class="submit" type="submit">Send Request</button>
-      <p class="help">By submitting, you agree to be contacted by our team on WhatsApp/call regarding your service request.</p>
     </form>
   </div>
 </section>
-    </div>
-
-
-
-
-    <footer>
+<footer>
       <div class="foot">
         <p class="caption">“Quick help at your doorstep — Reliable • Affordable • Trusted.”</p>
         <div class="credits">
@@ -546,25 +540,33 @@
       </div>
     </footer>
 
-    <script>
-      function sendWhatsApp(event) {
-        event.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const location = document.getElementById('location').value.trim();
-        const mobile = document.getElementById('mobile').value.trim();
-        const service = document.getElementById('service').value;
-        const details = document.getElementById('details').value.trim();
+<script>
+function sendWhatsApp(event) {
+  event.preventDefault();
 
-        const msg = `Hello, my name is ${name}. I need ${service} service in ${location}. My contact number is ${mobile}.${details ? ` Details: ${details}` : ''}`;
-        const phone = '91XXXXXXXXXX'; // apna WhatsApp number daalein
+  let name = document.getElementById("name").value.trim();
+  let mobile = document.getElementById("mobile").value.trim();
+  let location = document.getElementById("location").value.trim();
+  let service = document.getElementById("service").value;
+  let details = document.getElementById("details").value.trim();
 
-       
-      }
-    </script>
-</body>
+  // अपना WhatsApp नंबर (91 + number)
+  let phoneNumber = "+919602713323";
 
+  let message = `New Service Request:
+👤 Name: ${name}
+📞 Mobile: ${mobile}
+📍 Location: ${location}
+🛠 Service: ${service}
+📝 Details: ${details}`;
 
-</html>
+  // encodeURIComponent से पूरा text safe हो जाएगा
+  let url = https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)};
+
+  window.open(url, "_blank");
+}
+</script>
+
 
 
 
